@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Metal",
+      "price": "20"
+    },
+    {
+      "id": 2,
+      "name": "Tela",
+      "price": "10"
+    },
+    {
+      "id": 3,
+      "name": "Garfo",
+      "price": "15"
+    }
+  ]
+}

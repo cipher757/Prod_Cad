@@ -10,14 +10,14 @@
                     <div id="modelo" class="form-text"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputNome" class="form-label">Nome</label>
-                    <input type="nome" class="form-control" formControlName="name" id="exampleInputNome"  aria-describedby="nome">
-                    <div id="nome" class="form-text"></div>
+                    <label for="exampleInputName" class="form-label">Nome</label>
+                    <input type="name" class="form-control" formControlName="name" id="exampleInputName"  aria-describedby="name">
+                    <div id="name" class="form-text"></div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPreco" class="form-label">Preço</label>
-                    <input type="preco" class="form-control" formControlName="preco" id="exampleInputPreco" aria-describedby="preco">
-                    <div id="preco"  class="form-text"></div>
+                    <input type="price" class="form-control" formControlName="price" id="exampleInputPrice" aria-describedby="price">
+                    <div id="price"  class="form-text"></div>
                 </div>
                 <button type="submit" class="btn btn-primary" (click)="save()">Cadastrar
                 </button>
@@ -26,16 +26,20 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">Modelo</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Preço</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let s products">
-                        <th scope="row">{{s.id}}</th>
-                        <td>{{s.name}}</td>
-                        <td>{{s.price}}</td>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.id}}</th>
+                        <td>{{product.name}}</td>
+                        <td>{{product.price}}</td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-primary me-2" (click)="update(product)">Editar</button>
+                            <button type="button" class="btn btn-danger" (click)="delete(product)">Remover</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
